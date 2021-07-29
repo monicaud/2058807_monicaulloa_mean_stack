@@ -1,0 +1,94 @@
+div {
+  margin: auto;
+}
+.header {
+  border-bottom: solid 2px white;
+  position: fixed;
+  background-color: black;
+  height: 9.5rem;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#company-name {
+  font-size: 50px;
+  color: aquamarine;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+}
+
+a:hover {
+  color: white;
+  background-color: darkslategrey;
+}
+.main-content {
+  margin: auto;
+  position: relative;
+  background-color: #000000b0;
+  padding-bottom: 2.5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9.5rem;
+  width: 70%;
+  z-index: -1;
+}
+.footer {
+  color: aliceblue;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  padding-top: 20px;
+  text-align: center;
+}
+ul {
+  list-style: none;
+  position: fixed;
+  height: 150px;
+  width: 500px;
+  top: 20%;
+  left: 75%;
+  margin-left: -250px;
+  margin-top: -75px;
+}
+body {
+  background-color: black;
+}
+p {
+  color: white;
+}
+h1 {
+  color: greenyellow;
+}
+h2 {
+  color: rgb(193, 241, 121);
+}
+h3 {
+  color: rgb(204, 245, 142);
+  font-size: 20px;
+}
+h4 {
+  color: rgb(207, 243, 154);
+  font-size: 18px;
+}
+h5 {
+  color: rgb(207, 238, 160);
+  font-size: 16px;
+}
+h6 {
+  color: rgb(231, 248, 204);
+  font-size: 14px;
+}
+li {
+  display: inline-block;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: #c3c3c3;
+}
