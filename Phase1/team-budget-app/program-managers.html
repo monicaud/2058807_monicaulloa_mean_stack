@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Managers</title>
+    <script src="program-managers.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" >
+                <h1>Add New Budget</h3>
+            </div>
+        </div>
+        
+        <form method="GET" class="form-group" id="budgetform">
+            <div class="row">
+                <div class="col-3">
+                    <label>Client Name</label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="clientname" class="form-control">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-3" >
+                    <label>Project Name</label>
+                </div>
+                <div class="col-6" >
+                    <input type="text" id="projectname" class="form-control">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-3" >
+                    <label>Budget</label>
+                </div>
+                <div class="col-6" >
+                    <input type="number" id="budget" class="form-control">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <a href="main.html" class="btn btn-outline-info">Go Back</a>
+                </div>
+                <div class="col-6 text-right">
+                    <input type="button" value="Add" onclick="addBudget()" class="btn btn-primary">
+                    <input type="reset" value="Clear" class="btn btn-secondary">
+                </div>
+                                
+            </div>
+            
+        </form>
+    
+    </div>
+    
+    
+</body>
+</html>
