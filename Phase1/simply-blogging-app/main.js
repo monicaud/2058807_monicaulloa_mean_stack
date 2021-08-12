@@ -31,6 +31,7 @@ function validate(){
 
 function addBlog(){
     if(validate()){
+        console.log("hello");
         let title = document.getElementById("title").value;
         if(title.length > 30){
             title = "<div class = \"art-title\"><b>"+title.substring(0,30) + "... </b></div>";
