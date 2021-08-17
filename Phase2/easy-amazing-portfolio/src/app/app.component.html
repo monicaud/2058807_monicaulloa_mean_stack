@@ -1,0 +1,73 @@
+<div>
+  <div *ngIf="showLogin" class="container">
+    <h2>Log in</h2>
+    <form class="form-group" #loginRef= "ngForm">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" ngModel><br>
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" ngModel><br>
+        
+        <input type="reset" class="btn btn-danger" value="Clear">
+        <input type="button" class="btn btn-success" value="Log in" (click)="checkUser(loginRef)">
+        <input type="button" class="btn btn-secondary" value="back to signup" (click)="backToSignup()">
+    </form>
+    {{loginSuccess}}
+  </div>
+  <div>
+  </div>
+  <div *ngIf="showSignup" class="container">
+    <h2>Sign up</h2>
+    <form class="form-group" #signupRef = "ngForm">
+      <label>First Name: </label>
+      <input type="text" name="fname" class="form-control" ngModel>
+      <br>
+      <label>Last Name: </label>
+      <input type="text" name="lname" class="form-control" ngModel>
+      <br>
+      <label>Username: </label>
+      <input type="text" name="username" class="form-control" ngModel>
+      <br>
+      <label>Password: </label>
+      <input type="password" name="password" class="form-control" ngModel>
+      <br>
+      <input type="reset" class="btn btn-danger" value="Clear">
+      <input type="button" class="btn btn-success" value="Sign Up" (click)="createUser(signupRef)">
+      <input type="button" class="btn btn-secondary" value="Back to Login" (click)="backToLogin()">
+  </form>
+  </div>
+
+  <div *ngIf="showPortfolio" class="container">
+    <h2>Portfolio</h2>
+    <div>
+      <form class="form-group">
+        <label>Contact Name</label>
+        <input type="text" #contactRef class="form-control"><br>
+        <label>Phone number</label>
+        <input type="number" #contactNumRef class="form-control"><br>
+        <input type="reset" value="clear" class="btn btn-danger"> 
+        <input type="button" value="save" class="btn btn-success" (click)="saveContact(contactRef, contactNumRef)">
+      </form>
+    </div>
+    <div>
+      <table class="table" border="solid">
+        <thead>
+          <tr>
+            <th>Contact Name</th>
+            <th>Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let c of contacts">
+            <td>
+              {{c[0]}}
+            </td>
+            <td>
+              {{c[1]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <input type="button" value="Log out" class="btn btn-secondary" (click)="logout()">
+  </div>
+</div>
