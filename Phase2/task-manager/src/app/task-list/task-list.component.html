@@ -1,0 +1,38 @@
+<div>
+    <h2>Task List</h2>
+    <!-- <input type="button" value="load data" (click)="getData()"> -->
+    <table border="solid" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Task
+                </th>
+                <th>
+                    Date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of allTasks">
+                <td>
+                    {{t.id}}
+                </td>
+                <td>
+                    {{t.name}}
+                </td>
+                <td>
+                    {{t.task}}
+                </td>
+                <td>
+                    {{t.date}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
