@@ -1,0 +1,27 @@
+<div>
+    <h2>Questions</h2>
+    <form #questionsForm = "ngForm" (ngSubmit) = "checkAnswers(questionsForm)">
+        <div *ngFor="let q of allQuestions">
+            <label><h3>Q: {{q.question}}</h3></label>
+            <div *ngFor="let ans of q.opts">
+                <div id="{{q.question}}={{ans}}">
+                    <input type="radio" value="{{ans}}" name={{q.question}} ngModel required>
+                    {{ans}}
+                </div>
+                
+            </div>
+            <br>
+        </div>
+        <input type="reset" value="clear answers">
+        <!--submit button is disabled until all required fields are filled-->
+        <input type="submit" value="submit answers" [disabled]="questionsForm.invalid">
+        <input type="button" value="Reset Form" (click)="ngOnInit()">
+    </form>
+    <div class="row">
+        <h2>
+            {{scoreMsg}}
+        </h2>
+        
+    </div>
+    
+</div>
