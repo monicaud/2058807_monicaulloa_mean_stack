@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        
+        function sendMsg(){
+            var socket = io();
+            let myMsg = document.getElementById("chatbox").value;
+            document.getElementById("chatbox").value ="";
+            let msgElem = "<li><b>You said: </b>" + myMsg + "</li>";
+           
+            socket.emit("obj", myMsg);
+
+            socket.on("obj1", (msg)=>{
+                let yourMsgElem = "<li><b>Server said: </b>" + msg + "</li>";
+                document.getElementById("messages").innerHTML += msgElem + yourMsgElem;
+            });
+        }
+        
+    </script>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #ffb0e8;">
+    <div>
+        <h1>Chatting App: Mean Girlz Edition</h1>
+        <div style="background-color: white;">
+            <div style="height:500px;width:auto;border:1px solid #ccc; overflow:auto;">
+                <ul id="messages"></ul>
+            </div>
+        </div>
+        <div>
+            <form style="margin-top: 10px;">
+                <textarea id="chatbox" style="width: 95%; height: 50px; box-sizing: border-box;"></textarea>
+                <input type="button" value="Send" onclick="sendMsg()">
+            </form>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
