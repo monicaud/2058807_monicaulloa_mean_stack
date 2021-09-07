@@ -4,7 +4,6 @@ var users = [];
 let fs = require("fs");
 if(fs.existsSync("users.json")){
     users = JSON.parse(fs.readFileSync("users.json").toString());
-    debugger;
 }
 
 let readline = require("readline-sync");
