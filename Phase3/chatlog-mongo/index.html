@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        
+        function sendMsg(){
+            var socket = io();
+            let myMsg = document.getElementById("chatbox").value;
+            let msgObj = {name: document.getElementById("msgname").value , message: myMsg};
+            document.getElementById("chatbox").value ="";
+           
+            socket.emit("obj", msgObj);
+
+        }
+        
+    </script>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #b0f3ff;">
+    <div>
+        <h1>Chatting App</h1>
+        <div>
+            <form style="margin-top: 10px;">
+                <input type="text" id="msgname">
+                <textarea id="chatbox" style="width: 95%; height: 50px; box-sizing: border-box;"></textarea>
+                <input type="button" value="Send" onclick="sendMsg()">
+            </form>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
